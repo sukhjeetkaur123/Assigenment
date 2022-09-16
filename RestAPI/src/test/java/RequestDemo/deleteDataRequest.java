@@ -1,5 +1,6 @@
 package RequestDemo;
 
+import base.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -8,21 +9,31 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class deleteDataRequest {
+public class deleteDataRequest extends BaseTest {
+    Response response1;
     @Test
-    void Create_Customer() {
+   public void get_Resuest() {
 
-        Response response1 = given().contentType(ContentType.JSON).when()
+         response1 = given().contentType(ContentType.JSON).when()
                 .delete("https://reqres.in/api/users?page=2");
+    }
 
+    @Test
+    public void verifyResponse() {
         String getResponse = response1.getBody().asString();
         System.out.println("GET Response Body is: " + getResponse);
+    }
 
+    @Test
+    public void verifyStatusCode() {
         //Validate Status code
-        int statusCode=response1.getStatusCode();
+        int statusCode = response1.getStatusCode();
         System.out.println("Status Code is: " + statusCode);
         Assert.assertEquals(statusCode, 204);
+    }
 
+    @Test
+    public void verifyStatusLne() {
         //Validate the Status line
         String statusLine=response1.getStatusLine();
         System.out.println("Status line is: " + statusLine);
