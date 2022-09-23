@@ -10,6 +10,7 @@
             <class name="RequestDemo.PostDataReqest"/>
             <class name="RequestDemo.deleteDataRequest"/>
             <class name="RequestDemo.putDataRequest"/>
+
         </classes>
     </test>
 </suite>

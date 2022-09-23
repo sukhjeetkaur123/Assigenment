@@ -13,9 +13,8 @@ public class BaseTest {
 
     @BeforeSuite
     public void setUp(){
-        logger = Logger.getLogger("RestAssuredAPITesting_StripeProject");
+        logger = Logger.getLogger("RestAssuredAPITesting_ReqressProject");
         PropertyConfigurator.configure(System.getProperty("user.dir")+"\\src\\test\\java\\utilities\\log4j.properties");
         logger.setLevel(Level.DEBUG);
-
     }
 }
