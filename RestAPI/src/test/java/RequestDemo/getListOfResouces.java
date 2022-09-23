@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class getDataRequest extends BaseTest {
-Response response1;
+public class getListOfResouces extends BaseTest {
+    Response response1;
     @Test
     public void CreateGetRequest() {
-      response1 = given().contentType(ContentType.JSON).when()
-                .get("https://reqres.in/api/users/2");
+        response1 = given().contentType(ContentType.JSON).when()
+                .get("https://reqres.in/api/users?page=2");
     }
 
     @Test
@@ -37,4 +37,5 @@ Response response1;
         System.out.println("Status line is: " + statusLine);
         Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
     }
+
 }
